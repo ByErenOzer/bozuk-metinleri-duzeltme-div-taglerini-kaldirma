@@ -1,0 +1,10 @@
+# Excel dosyaları
+*.xlsx
+*.xls
+
+# Sistem ve IDE dosyaları
+.trae/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
