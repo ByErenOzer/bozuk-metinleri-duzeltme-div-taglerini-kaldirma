@@ -54,6 +54,6 @@ def process_workbook(src, dst):
     return changed
 
 if __name__ == '__main__':
-    src = r'c:\\Users\\doganeren.ozer\\Desktop\\div_clean_text\\SONUÇ-NADİR.xlsx'
-    dst = r'c:\\Users\\doganeren.ozer\\Desktop\\div_clean_text\\SONUÇ-NADİR-temiz.xlsx'
+    src = r'c:\\Users\\doganeren.ozer\\Desktop\\div_clean_text\\patolojiLLMguncel.xlsx'
+    dst = r'c:\\Users\\doganeren.ozer\\Desktop\\div_clean_text\\patolojiLLMguncel-temiz.xlsx'
     process_workbook(src, dst)
