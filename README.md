@@ -56,6 +56,24 @@ python -V               # Python sürümünü doğrulayın
 python -m pip install openpyxl
 ```
 
+## 📌 Ek Script: Şifreli Excel (Password-Protected) için
+Bu repoda ayrıca `2-clean_tektik_sonucu_password_excel.py` bulunur. Bu script, **parola korumalı** bir `.xlsx` dosyasını önce çözüp (decrypt), ardından tüm sayfalarda `tetkik_sonucu` / `tetkit_sonucu` sütununu temizleyerek çıktıyı yeni bir Excel dosyası olarak yazar.
+
+Bu scriptte yaklaşım `pandas` + `openpyxl` üzerindendir:
+- Excel dosyası bellek içine decrypt edilir
+- Tüm sheet'ler tek tek okunur
+- Hedef sütun temizlenir ve `tetkik_sonucu_temiz` olarak yeniden adlandırılır
+- Her sheet çıktı dosyasına geri yazılır
+
+Gerekli ek kütüphaneler:
+```bash
+python -m pip install pandas openpyxl msoffcrypto-tool
+```
+
+Notlar:
+- Parola korumalı dosyalarda decrypt için script içinde parola kullanılır; kendi dosyanıza göre `password` değerini güncellemeniz gerekir.
+- `src` ve `dst` dosya yolları scriptin en altındaki `__main__` bloğunda örnek olarak yer alır; kendi ortamınıza göre düzenleyin.
+
 ## 🔎 Doğrulama
 - Yeni dosyayı açın ve her sayfada `tetkik_sonucu_temiz` başlığının bulunduğunu kontrol edin
 - Metin içinde `<div>`, `&#NNN;`, `&apos;` gibi kalıntıların kalmadığını ve Türkçe karakterlerin doğru göründüğünü doğrulayın
